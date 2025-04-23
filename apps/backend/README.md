@@ -65,7 +65,7 @@ The system employs a multi-layered architecture:
 
 ### 環境需求 | Prerequisites
 - Node.js v18.20.3+
-- Python 3.8+ 與 Anaconda/Miniconda | Python 3.8+ with Anaconda/Miniconda
+- Python 3.9+ 與 Anaconda/Miniconda | Python 3.8+ with Anaconda/Miniconda
 - SQL Server 2019+
 - CUDA 支援的 NVIDIA GPU (建議 RTX 系列) | CUDA-compatible NVIDIA GPU (RTX series recommended)
 
@@ -74,7 +74,7 @@ The system employs a multi-layered architecture:
 1. **設定 Python 環境 | Set up Python Environment**
 ```bash
 # 建立獨立環境 | Create isolated environment
-conda create -n whisperx python=3.8
+conda create -n whisperx python=3.9
 conda activate whisperx
 
 # 安裝 WhisperX | Install WhisperX
@@ -86,8 +86,8 @@ pip install git+https://github.com/m-bain/whisperx.git
 2. **設定資料庫 | Set up Database**
 ```bash
 # 使用 Docker 快速部署 SQL Server | Quick deployment with Docker
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrongPassword' \
-  -p 1433:1433 --name as-sqlserver \
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=mypassowrd' \
+  -p 1433:1433 --name mysqlserver \
   -d mcr.microsoft.com/mssql/server:2019-latest
 
 # 或使用現有的 SQL Server 實例 | Or use existing SQL Server instance
